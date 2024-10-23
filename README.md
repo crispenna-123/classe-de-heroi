@@ -1,16 +1,16 @@
 # 📝 Sistema de Heróis 📝
 
-## 📄 Descrição 📄
+## 📄 Descrição 
 Este projeto implementa uma classe que representa um herói em uma aventura. A classe permite criar heróis com diferentes características e simular ataques, classificando-os de acordo com seu tipo.
 
-## ⚠️ O Que Deve Ser Utilizado ⚠️
+## ⚠️ O Que Deve Ser Utilizado 
 
 - Variáveis
 - Operadores
 - Estruturas de decisão (obrigatório)
 - Funções
 
-## 🎯 Objetivo 🎯
+## 🎯 Objetivo 
 Você deverá criar uma classe chamada Heroi que possui as seguintes propriedades:
 
 nome: O nome do herói.
