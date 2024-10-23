@@ -1,4 +1,4 @@
-# Sistema de Heróis ⚔️
+# 📝 Sistema de Heróis 📝
 
 ## 📄 Descrição 📄
 Este projeto implementa uma classe que representa um herói em uma aventura. A classe permite criar heróis com diferentes características e simular ataques, classificando-os de acordo com seu tipo.
