@@ -35,18 +35,38 @@ class Heroi {
 }
 
 // Função para solicitar os dados do herói e executar o ataque
-rl.question("Digite o nome do herói: ", (nome) => {
-  rl.question("Digite a idade do herói: ", (idade) => {
-    rl.question("Digite o tipo do herói (guerreiro, mago, monge, ninja): ", (tipo) => {
+const solicitarDadosHeroi = () => {
+  rl.question("Digite o nome do herói: ", (nome) => {
+    rl.question("Digite a idade do herói: ", (idade) => {
+      const idadeNum = parseInt(idade);
       
-      // Criar uma nova instância de Heroi com os dados fornecidos
-      const heroi = new Heroi(nome, parseInt(idade), tipo.toLowerCase());
+      if (isNaN(idadeNum) || idadeNum <= 0) {
+        console.log("Idade inválida. Por favor, insira um número positivo.");
+        rl.close();
+        return;
+      }
 
-      // Chamar o método atacar
-      heroi.atacar();
+      rl.question("Digite o tipo do herói (guerreiro, mago, monge, ninja): ", (tipo) => {
+        const tiposValidos = ['guerreiro', 'mago', 'monge', 'ninja'];
 
-      // Fechar a interface
-      rl.close();
+        if (!tiposValidos.includes(tipo.toLowerCase())) {
+          console.log("Tipo inválido. Por favor, escolha entre guerreiro, mago, monge ou ninja.");
+          rl.close();
+          return;
+        }
+        
+        // Criar uma nova instância de Heroi com os dados fornecidos
+        const heroi = new Heroi(nome, idadeNum, tipo.toLowerCase());
+
+        // Chamar o método atacar
+        heroi.atacar();
+
+        // Fechar a interface
+        rl.close();
+      });
     });
   });
-});
+};
+
+// Iniciar o processo de solicitação de dados
+solicitarDadosHeroi();
